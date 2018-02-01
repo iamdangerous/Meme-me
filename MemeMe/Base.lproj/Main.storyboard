@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,50 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i51-aP-tzD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhu-HB-1yH">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="rRu-U8-5fC">
+                                        <connections>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="Ssy-ti-bYf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera" id="IlC-3l-ALW">
+                                        <connections>
+                                            <action selector="openCamera:" destination="BYZ-38-t0r" id="Dm7-Hx-vZH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i51-aP-tzD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Vo-Xp-OOS"/>
+                            <constraint firstItem="qhu-HB-1yH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5Py-pp-0tk"/>
+                            <constraint firstItem="qhu-HB-1yH" firstAttribute="top" secondItem="i51-aP-tzD" secondAttribute="bottom" id="ELX-fE-NVh"/>
+                            <constraint firstItem="qhu-HB-1yH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="beJ-mn-ZGM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i51-aP-tzD" secondAttribute="trailing" id="hRm-P9-9jB"/>
+                            <constraint firstItem="i51-aP-tzD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o15-3Z-LVI"/>
+                            <constraint firstItem="qhu-HB-1yH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="swp-74-GVr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageCamera" destination="IlC-3l-ALW" id="evv-66-1P1"/>
+                        <outlet property="imagePickerView" destination="i51-aP-tzD" id="mnu-sK-RQo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
